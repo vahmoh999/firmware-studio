@@ -1,0 +1,3 @@
+add_library(include_directories INTERFACE)
+
+target_include_directories(include_directories INTERFACE declaration)
