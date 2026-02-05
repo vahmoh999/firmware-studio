@@ -30,9 +30,23 @@ typedef struct {
 
 [[nodiscard]]
 FIRMWARE_ALWAYS_INLINE
-FIRMWARE_USED
 static inline volatile sio_t *sio(void) {
     return (volatile sio_t *)0xD0000000;
+}
+
+FIRMWARE_ALWAYS_INLINE
+static inline void sio_gpio_out_set_write(uint32_t value) {
+    sio()->gpio_out_set = value;
+}
+
+FIRMWARE_ALWAYS_INLINE
+static inline void sio_gpio_oe_set_write(uint32_t value) {
+    sio()->gpio_oe_set = value;
+}
+
+FIRMWARE_ALWAYS_INLINE
+static inline void sio_gpio_oe_xor_write(uint32_t value) {
+    sio()->gpio_oe_xor = value;
 }
 
 #endif

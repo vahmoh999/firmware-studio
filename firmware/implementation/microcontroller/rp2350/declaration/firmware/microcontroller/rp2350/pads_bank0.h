@@ -12,14 +12,12 @@ typedef struct {
 
 [[nodiscard]]
 FIRMWARE_ALWAYS_INLINE
-FIRMWARE_USED
 static inline volatile pads_bank0_t *pads_bank0(void) {
     return (volatile pads_bank0_t *)0x40038000;
 }
 
 FIRMWARE_ALWAYS_INLINE
-FIRMWARE_USED
-static inline void pads_bank0_gpio_iso_set(uint8_t id, bool iso) {
+static inline void pads_bank0_gpio_iso_write(uint8_t id, bool iso) {
     if (iso) {
         pads_bank0()->gpio[id] |= 1U << 8;
     } else {
