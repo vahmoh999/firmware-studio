@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include <firmware/compiler.h>
+
 typedef enum : uint8_t {
     UART_ID_0 = 0,
     UART_ID_1 = 1,

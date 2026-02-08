@@ -1,7 +1,6 @@
 #ifndef FIRMWARE_KERNEL_INITIALIZATION_H
 #define FIRMWARE_KERNEL_INITIALIZATION_H
 
-[[noreturn]]
-void initialize(void);
+void initialization_initialize(void);
 
 #endif

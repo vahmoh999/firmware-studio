@@ -1,11 +1,13 @@
 add_subdirectory(architecture)
 add_subdirectory(kernel)
 add_subdirectory(microcontroller)
+add_subdirectory(service)
 
 add_executable(firmware
     $<TARGET_OBJECTS:architecture>
     $<TARGET_OBJECTS:kernel>
     $<TARGET_OBJECTS:microcontroller>
+    $<TARGET_OBJECTS:service>
 )
 
 target_link_libraries(firmware PRIVATE link_options)

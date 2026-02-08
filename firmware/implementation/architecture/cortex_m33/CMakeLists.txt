@@ -1,1 +1,1 @@
-add_library(architecture OBJECT vector_table.c)
+add_library(architecture OBJECT exception.c scheduler.c vector_table.c)

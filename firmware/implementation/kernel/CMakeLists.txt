@@ -1,5 +1,9 @@
-add_library(kernel OBJECT initialization.c)
+add_library(kernel OBJECT initialization.c scheduler.c)
 
-target_include_directories(kernel PUBLIC declaration)
+target_include_directories(kernel
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/declaration/firmware/kernel
+        internal
+)
 
-target_link_libraries(kernel PRIVATE compile_options include_directories microcontroller)
+target_link_libraries(kernel PRIVATE compile_options include_directories service)
